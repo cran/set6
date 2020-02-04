@@ -10,7 +10,7 @@
 #' @templateVar constructor ConditionalSet$new(condition, argclass = NULL)
 #' @templateVar arg1 `condition` \tab function \tab Function for defining the set. See constructor details. \cr
 #' @templateVar arg2 `argclass` \tab list \tab Optional list of sets that the function arguments live in. See constructor details.
-#' @templateVar constructorDets The `condition` should be given as a function that when evaluated returns either TRUE or FALSE. Further constraints can be given by providing the universe of the function arguments as [Set]s, if these are not given then the [Reals] is assumed. See examples.
+#' @templateVar constructorDets The `condition` should be given as a function that when evaluated returns either TRUE or FALSE. Further constraints can be given by providing the universe of the function arguments as [Set]s, if these are not given then the [UniversalSet] is assumed. See examples.
 #' @templateVar field1 `condition` \tab [condition] \cr
 #'
 #' @details
@@ -42,7 +42,7 @@ NULL
 #---------------------------------------------
 # Definition and Construction
 #---------------------------------------------
-ConditionalSet <- R6::R6Class("ConditionalSet", inherit = Set)
+ConditionalSet <- R6Class("ConditionalSet", inherit = Set)
 ConditionalSet$set("public","initialize",function(condition, argclass = NULL){
   if(!is.function(condition))
     stop("'condition' must be a function.")
@@ -59,7 +59,7 @@ ConditionalSet$set("public","initialize",function(condition, argclass = NULL){
   if (!is.null(argclass))
     assertSetList(argclass)
   else {
-    argclass <- rep(list(Reals$new()), private$.dimension)
+    argclass <- rep(list(UniversalSet$new()), private$.dimension)
     names(argclass) <- names(formals(condition))
   }
 
@@ -124,11 +124,11 @@ ConditionalSet$set("public","equals",function(x, all = FALSE){
 })
 ConditionalSet$set("public","strprint",function(n = NULL){
   if(useUnicode())
-    sep = " \u03B5 "
+    sep = " \u2208 "
   else
     sep = " in "
 
-  return(paste0("{",paste0(deparse(body(self$condition))," : ",
+  return(paste0("{",paste0(paste0(deparse(body(self$condition), width.cutoff = 500L), collapse = ""), " : ",
                            paste(names(self$class), sapply(self$class, function(x) x$strprint()),
                                  sep = sep, collapse = ", "),"}")))
 })

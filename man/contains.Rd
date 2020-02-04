@@ -52,7 +52,6 @@ c(Tuple$new(2,1), Tuple$new(1,7), 2) \%inset\% s2
 }
 \seealso{
 Other set methods: 
-\code{\link{absComplement}},
 \code{\link{equals}},
 \code{\link{isSubset}}
 }

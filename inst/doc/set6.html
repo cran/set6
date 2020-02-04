@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="date" content="2019-11-28" />
+<meta name="date" content="2020-02-04" />
 
 <title>Introduction to set6</title>
 
@@ -302,7 +301,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 
 
 <h1 class="title toc-ignore">Introduction to set6</h1>
-<h4 class="date">2019-11-28</h4>
+<h4 class="date">2020-02-04</h4>
 
 
 
@@ -369,10 +368,10 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <a class="sourceLine" id="cb4-12" data-line-number="12">Interval<span class="op">$</span><span class="kw">new</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="dt">class =</span> <span class="st">&quot;integer&quot;</span>)</a>
 <a class="sourceLine" id="cb4-13" data-line-number="13"><span class="co">#&gt; {1,...,10}</span></a>
 <a class="sourceLine" id="cb4-14" data-line-number="14">Interval<span class="op">$</span><span class="kw">new</span>(<span class="dv">1</span>, <span class="dv">10</span>) <span class="co"># numeric is default</span></a>
-<a class="sourceLine" id="cb4-15" data-line-number="15"><span class="co">#&gt; [1, 10]</span></a>
+<a class="sourceLine" id="cb4-15" data-line-number="15"><span class="co">#&gt; [1,10]</span></a>
 <a class="sourceLine" id="cb4-16" data-line-number="16"><span class="co"># `type` is used to specify the interval upper and lower closure</span></a>
 <a class="sourceLine" id="cb4-17" data-line-number="17">Interval<span class="op">$</span><span class="kw">new</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="dt">type =</span> <span class="st">&quot;()&quot;</span>) </a>
-<a class="sourceLine" id="cb4-18" data-line-number="18"><span class="co">#&gt; (1, 10)</span></a>
+<a class="sourceLine" id="cb4-18" data-line-number="18"><span class="co">#&gt; (1,10)</span></a>
 <a class="sourceLine" id="cb4-19" data-line-number="19"></a>
 <a class="sourceLine" id="cb4-20" data-line-number="20"><span class="co"># SpecialSets are useful for common 'special' mathematical sets</span></a>
 <a class="sourceLine" id="cb4-21" data-line-number="21"><span class="co"># Use listSpecialSets() to see which are available.</span></a>
@@ -384,7 +383,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <a class="sourceLine" id="cb4-27" data-line-number="27"><span class="co"># ConditionalSets are user-built sets from logical statements.</span></a>
 <a class="sourceLine" id="cb4-28" data-line-number="28"><span class="co"># For example, the set of even numbers.</span></a>
 <a class="sourceLine" id="cb4-29" data-line-number="29">ConditionalSet<span class="op">$</span><span class="kw">new</span>(<span class="cf">function</span>(x) x <span class="op">%%</span><span class="st"> </span><span class="dv">2</span> <span class="op">==</span><span class="st"> </span><span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb4-30" data-line-number="30"><span class="co">#&gt; {x%%2 == 0 : x ε ℝ}</span></a>
+<a class="sourceLine" id="cb4-30" data-line-number="30"><span class="co">#&gt; {x%%2 == 0 : x ∈ V}</span></a>
 <a class="sourceLine" id="cb4-31" data-line-number="31"></a>
 <a class="sourceLine" id="cb4-32" data-line-number="32"><span class="co"># Finally FuzzySets and FuzzyTuples expand Sets and Tuples to allow for partial </span></a>
 <a class="sourceLine" id="cb4-33" data-line-number="33"><span class="co"># membership of elements. These have two constructors, either by specifying the elements</span></a>
@@ -465,9 +464,9 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">Set<span class="op">$</span><span class="kw">new</span>(<span class="dv">1</span>) <span class="op">+</span><span class="st"> </span>Set<span class="op">$</span><span class="kw">new</span>(<span class="dv">2</span>) <span class="op">+</span><span class="st"> </span>Set<span class="op">$</span><span class="kw">new</span>(<span class="dv">3</span>)</a>
 <a class="sourceLine" id="cb6-2" data-line-number="2"><span class="co">#&gt; {1, 2, 3}</span></a>
 <a class="sourceLine" id="cb6-3" data-line-number="3">Interval<span class="op">$</span><span class="kw">new</span>(<span class="dv">1</span>, <span class="dv">10</span>) <span class="op">+</span><span class="st"> </span>Set<span class="op">$</span><span class="kw">new</span>(<span class="dv">1</span>) <span class="co"># no effect</span></a>
-<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="co">#&gt; [1, 10]</span></a>
+<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="co">#&gt; [1,10]</span></a>
 <a class="sourceLine" id="cb6-5" data-line-number="5"><span class="kw">setunion</span>(Set<span class="op">$</span><span class="kw">new</span>(<span class="dv">1</span>,<span class="dv">2</span>), Interval<span class="op">$</span><span class="kw">new</span>(<span class="dv">3</span>, <span class="dv">10</span>), Set<span class="op">$</span><span class="kw">new</span>(<span class="dv">16</span>))</a>
-<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="co">#&gt; {1, 2, 16} ∪ [3, 10]</span></a>
+<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="co">#&gt; {1, 2, 16} ∪ [3,10]</span></a>
 <a class="sourceLine" id="cb6-7" data-line-number="7"></a>
 <a class="sourceLine" id="cb6-8" data-line-number="8">PosReals<span class="op">$</span><span class="kw">new</span>() <span class="op">+</span><span class="st"> </span>NegReals<span class="op">$</span><span class="kw">new</span>()</a>
 <a class="sourceLine" id="cb6-9" data-line-number="9"><span class="co">#&gt; ℝ</span></a></code></pre></div>
@@ -486,9 +485,9 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <a class="sourceLine" id="cb7-9" data-line-number="9">Interval<span class="op">$</span><span class="kw">new</span>(<span class="dv">5</span>, <span class="dv">10</span>) <span class="op">-</span><span class="st"> </span>Interval<span class="op">$</span><span class="kw">new</span>(<span class="dv">3</span>, <span class="dv">12</span>)</a>
 <a class="sourceLine" id="cb7-10" data-line-number="10"><span class="co">#&gt; ∅</span></a>
 <a class="sourceLine" id="cb7-11" data-line-number="11">Interval<span class="op">$</span><span class="kw">new</span>(<span class="dv">5</span>, <span class="dv">10</span>) <span class="op">-</span><span class="st"> </span>Interval<span class="op">$</span><span class="kw">new</span>(<span class="dv">7</span>, <span class="dv">12</span>)</a>
-<a class="sourceLine" id="cb7-12" data-line-number="12"><span class="co">#&gt; [5, 7)</span></a>
+<a class="sourceLine" id="cb7-12" data-line-number="12"><span class="co">#&gt; [5,7)</span></a>
 <a class="sourceLine" id="cb7-13" data-line-number="13">Interval<span class="op">$</span><span class="kw">new</span>(<span class="dv">5</span>, <span class="dv">10</span>) <span class="op">-</span><span class="st"> </span>Interval<span class="op">$</span><span class="kw">new</span>(<span class="dv">11</span>, <span class="dv">12</span>) <span class="co"># no effect</span></a>
-<a class="sourceLine" id="cb7-14" data-line-number="14"><span class="co">#&gt; [5, 10]</span></a></code></pre></div>
+<a class="sourceLine" id="cb7-14" data-line-number="14"><span class="co">#&gt; [5,10]</span></a></code></pre></div>
 </div>
 <div id="cartesian-product" class="section level3">
 <h3>Cartesian Product</h3>
