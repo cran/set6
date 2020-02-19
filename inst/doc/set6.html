@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-<meta name="date" content="2020-02-04" />
+<meta name="date" content="2020-02-19" />
 
 <title>Introduction to set6</title>
 
@@ -301,7 +301,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 
 
 <h1 class="title toc-ignore">Introduction to set6</h1>
-<h4 class="date">2020-02-04</h4>
+<h4 class="date">2020-02-19</h4>
 
 
 
@@ -466,7 +466,7 @@ code > span.fu { color: #900; font-weight: bold; }  code > span.er { color: #a61
 <a class="sourceLine" id="cb6-3" data-line-number="3">Interval<span class="op">$</span><span class="kw">new</span>(<span class="dv">1</span>, <span class="dv">10</span>) <span class="op">+</span><span class="st"> </span>Set<span class="op">$</span><span class="kw">new</span>(<span class="dv">1</span>) <span class="co"># no effect</span></a>
 <a class="sourceLine" id="cb6-4" data-line-number="4"><span class="co">#&gt; [1,10]</span></a>
 <a class="sourceLine" id="cb6-5" data-line-number="5"><span class="kw">setunion</span>(Set<span class="op">$</span><span class="kw">new</span>(<span class="dv">1</span>,<span class="dv">2</span>), Interval<span class="op">$</span><span class="kw">new</span>(<span class="dv">3</span>, <span class="dv">10</span>), Set<span class="op">$</span><span class="kw">new</span>(<span class="dv">16</span>))</a>
-<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="co">#&gt; {1, 2, 16} ∪ [3,10]</span></a>
+<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="co">#&gt; {1,...,2} ∪ [3,10] ∪ {16,...,16}</span></a>
 <a class="sourceLine" id="cb6-7" data-line-number="7"></a>
 <a class="sourceLine" id="cb6-8" data-line-number="8">PosReals<span class="op">$</span><span class="kw">new</span>() <span class="op">+</span><span class="st"> </span>NegReals<span class="op">$</span><span class="kw">new</span>()</a>
 <a class="sourceLine" id="cb6-9" data-line-number="9"><span class="co">#&gt; ℝ</span></a></code></pre></div>
