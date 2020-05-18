@@ -16,26 +16,23 @@ test_that("SpecialSets",{
 })
 
 test_that("constructor",{
-  expect_silent(ComplementSet$new(Set$new(1:10), Set$new(5, 7)))
+  expect_silent(ComplementSet$new(Set$new(elements = 1:10), Set$new(5, 7)))
   expect_equal(ComplementSet$new(Interval$new(1, 3), Interval$new(1, 2))$lower, 1 + .Machine$double.xmin)
   expect_equal(ComplementSet$new(Interval$new(1, 3, class = "integer"), Interval$new(1, 2))$lower, 2)
   expect_equal(ComplementSet$new(Interval$new(1, 3), Interval$new(2, 3))$upper, 3 - .Machine$double.xmin)
   expect_equal(ComplementSet$new(Interval$new(1, 3, class = "integer"), Interval$new(2,3))$upper, 2)
   expect_equal(ComplementSet$new(Interval$new(1, 3, class = "integer"), Interval$new(1, 2))$upper, 3)
   expect_equal(ComplementSet$new(Interval$new(1, 3, class = "integer"), Interval$new(2, 3))$lower, 1)
-  # expect_equal(ComplementSet$new(Set$new(1, 3), Set$new(1))$lower, 3)
-  # expect_equal(ComplementSet$new(Set$new(1, 2, 3), Set$new(1,2))$lower, 3)
-  # expect_equal(ComplementSet$new(Set$new(1, 3), Set$new(3))$upper, 1)
-  # expect_equal(ComplementSet$new(Set$new(1, 2, 3), Set$new(2,3))$upper, 1)
+  expect_equal(ComplementSet$new(Set$new(1, 3), Set$new(1))$lower, 3)
 })
 
 test_that("fields",{
-  d = ComplementSet$new(Set$new(1:10), Set$new(5, 10))
+  d = ComplementSet$new(Set$new(elements = 1:10), Set$new(5, 10))
   expect_equal(d$length, 8)
   # expect_equal(d$lower, 1)
   # expect_equal(d$upper, 9)
   expect_equal(d$elements, as.list(c(1:4, 6:9)))
-  expect_equal(ComplementSet$new(Set$new(1:10), Interval$new(5, 10))$elements, NA)
+  expect_equal(ComplementSet$new(Set$new(elements = 1:10), Interval$new(5, 10))$elements, NA)
   expect_equal(d$type, "{}")
 })
 

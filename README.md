@@ -3,19 +3,18 @@ set6
 
 <img src="man/figures/logo.png" align="right" alt="" width="120" />
 
-[![Travis Build
-Status](https://travis-ci.com/RaphaelS1/set6.svg?branch=master)](https://travis-ci.com/RaphaelS1/set6)
-[![Appveyor Build
-status](https://ci.appveyor.com/api/projects/status/ueqvqs5n38tcs3r8?svg=true)](https://ci.appveyor.com/project/RaphaelS1/set6)
-[![codecov](https://codecov.io/gh/RaphaelS1/set6/branch/master/graph/badge.svg)](https://codecov.io/gh/RaphaelS1/set6)
+![R CMD Check via
+{tic}](https://github.com/xoopR/set6/workflows/R%20CMD%20Check%20via%20%7Btic%7D/badge.svg?branch=master)
+[![codecov](https://codecov.io/gh/xoopR/set6/branch/master/graph/badge.svg)](https://codecov.io/gh/xoopR/set6)
 [![Repo
-Status](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/badges/latest/active)
+Status](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Lifecycle
 Badge](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://img.shields.io/badge/lifecycle-maturing-blue)
 [![CRAN Status
 Badge](https://www.r-pkg.org/badges/version-ago/set6)](https://cran.r-project.org/package=set6)
 [![CRAN
 Checks](https://cranchecks.info/badges/summary/set6)](https://cran.r-project.org/web/checks/check_results_set6.html)
+[![DOI](https://zenodo.org/badge/197164551.svg)](https://zenodo.org/badge/latestdoi/197164551)
 [![License:
 MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![CRAN
@@ -49,7 +48,7 @@ install.packages("set6")
 Or for the latest stable build
 
 ``` r
-remotes::install_github("RaphaelS1/set6")
+remotes::install_github("xoopR/set6")
 ```
 
 ## Main Features
@@ -216,12 +215,12 @@ of sets and intervals, but this is very low priority.
 
 ## Similar Packages
 
-  - [sets](https://cran.r-project.org/web/packages/sets/index.html) -
-    The **sets** package uses S3 to define some symbolic representaton
-    of mathematical sets, tuple, intervals, and fuzzy variants. However
-    the symbolic representation is not consistent throughout the
-    package, does not allow for clear inspection of set/interval
-    elements, and there is no support for multi-dimensional sets.
+  - [sets](https://CRAN.R-project.org/package=sets) - The **sets**
+    package uses S3 to define some symbolic representaton of
+    mathematical sets, tuple, intervals, and fuzzy variants. However the
+    symbolic representation is not consistent throughout the package,
+    does not allow for clear inspection of set/interval elements, and
+    there is no support for multi-dimensional sets.
 
   - [BaseSet](https://github.com/llrs/BaseSet) - The **BaseSet** package
     focuses on storing and analysing sets in a ‘tidy’ way, with more
@@ -235,5 +234,5 @@ As `set6` is in its early stages, contributions are very welcome. If you
 have any ideas for good features please open an issue or create a pull
 request. Otherwise bug reports are very appreciated if you stumble
 across any broken code, these can be posted to the [issue
-tracker](https://github.com/RaphaelS1/set6/issues). For updates on
-`set6` follow/star this repo.
+tracker](https://github.com/xoopR/set6/issues). For updates on `set6`
+follow/star this repo.

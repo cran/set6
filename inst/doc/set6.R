@@ -69,10 +69,10 @@ s != c(Set$new(1,2,3), Set$new(1, 2))
 # The `bound` argument in `isSubset` is used for specifying
 #   how open interval containedness should be checked
 i = Interval$new(1, 10, type = "(]")
-i$contains(1, bound = FALSE)
-i$contains(10, bound = FALSE)
-i$contains(1, bound = TRUE)
-i$contains(10, bound = TRUE)
+i$contains(Set$new(1), bound = FALSE)
+i$contains(Set$new(10), bound = FALSE)
+i$contains(Set$new(1), bound = TRUE)
+i$contains(Set$new(10), bound = TRUE)
 
 ## -----------------------------------------------------------------------------
 Set$new(1) + Set$new(2) + Set$new(3)
@@ -82,7 +82,7 @@ setunion(Set$new(1,2), Interval$new(3, 10), Set$new(16))
 PosReals$new() + NegReals$new()
 
 ## -----------------------------------------------------------------------------
-Set$new(1:10) - Set$new(4:10)
+Set$new(elements = 1:10) - Set$new(elements = 4:10)
 Set$new(1,2,3,4) - Set$new(2)
 
 Reals$new() - PosReals$new()

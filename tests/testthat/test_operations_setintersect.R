@@ -6,8 +6,10 @@ test_that("SetXSet",{
   expect_true(setintersect(Set$new(1,2,3), Set$new(3:5)) == (Set$new(3)))
   expect_equal(Set$new(1) & Set$new(), Set$new())
   expect_equal(Set$new(1,2,3) & Set$new(1), Set$new(1))
-  expect_equal(Tuple$new(1, "a", 2L) & Set$new(letters), Set$new("a"))
+  expect_equal(Set$new(1) & Set$new(1,2,3), Set$new(1))
+  expect_equal(Tuple$new(1, "a", 2L) & Set$new(elements = letters), Set$new("a"))
   expect_equal(Set$new(1) & Set$new(1,2), Set$new(1))
+  expect_equal(Set$new() & Set$new(), Set$new())
 })
 
 test_that("conditionalset",{
@@ -15,11 +17,11 @@ test_that("conditionalset",{
                ConditionalSet$new(function(x, y) x == 1 & y > 1))
   expect_equal(ConditionalSet$new(function(x) x == 1) & ConditionalSet$new(function(y) y == 1),
                ConditionalSet$new(function(x) x == 1))
-  expect_true((ConditionalSet$new(function(x) x == 0) & Set$new(-2:2))$equals(Set$new(0)))
+  expect_true((ConditionalSet$new(function(x) x == 0) & Set$new(elements = -2:2))$equals(Set$new(0)))
 })
 
 test_that("fuzzy",{
-  expect_true((FuzzySet$new(1,0.1,2,0.3) & Set$new(2:5)) == Set$new(2))
+  expect_true((FuzzySet$new(1,0.1,2,0.3) & Set$new(elements = 2:5)) == Set$new(2))
 })
 
 test_that("interval",{
@@ -30,9 +32,12 @@ test_that("interval",{
 })
 
 test_that("mixed",{
-  expect_equal(Set$new(1:2) & ConditionalSet$new(function(x) x == 3), Set$new())
+  expect_equal(Set$new(elements = 1:2) & ConditionalSet$new(function(x) x == 3), Set$new())
   expect_equal(Set$new("a",2) & Interval$new(1,10), Set$new(2))
   expect_equal(Interval$new(1,10) & Set$new("a",2), Set$new(2))
+  expect_equal(Interval$new() & Set$new(), Set$new())
+  expect_equal(Interval$new(1,5) & Interval$new(2,3), Interval$new(2,3))
+  expect_equal(Interval$new(2,3) & Interval$new(1,5), Interval$new(2,3))
 })
 
 test_that("UnionSet",{

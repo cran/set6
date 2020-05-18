@@ -8,7 +8,7 @@ vignette: >
   \usepackage[utf8]{inputenc}
 ---
 
-set6 is an object-oriented interface for constructing and manipulating mathematical sets using R6. set6 allows a variety of mathematical sets, including Sets, Tuple, Intervals and Fuzzy variants; there are also Conditional sets for creating sets out of complex logical instructions. A full set of tutorials can be found [here](https://raphaels1.github.io/set6/). In this introductory vignette we briefly demonstrate how to construct a set, access its properties and traits, and some basic algebra of sets.
+set6 is an object-oriented interface for constructing and manipulating mathematical sets using R6. set6 allows a variety of mathematical sets, including Sets, Tuple, Intervals and Fuzzy variants; there are also Conditional sets for creating sets out of complex logical instructions. A full set of tutorials can be found [here](https://xoopR.github.io/set6/). In this introductory vignette we briefly demonstrate how to construct a set, access its properties and traits, and some basic algebra of sets.
 
 Before we get started note that by default `set6` uses unicode for printing representations of sets. Whilst this is preferred for neater printing, some machines, operating systems, or R versions may not behave as expected when printing unicode and therefore we allow the option to turn this off.
 
@@ -116,10 +116,10 @@ s != c(Set$new(1,2,3), Set$new(1, 2))
 # The `bound` argument in `isSubset` is used for specifying
 #   how open interval containedness should be checked
 i = Interval$new(1, 10, type = "(]")
-i$contains(1, bound = FALSE)
-i$contains(10, bound = FALSE)
-i$contains(1, bound = TRUE)
-i$contains(10, bound = TRUE)
+i$contains(Set$new(1), bound = FALSE)
+i$contains(Set$new(10), bound = FALSE)
+i$contains(Set$new(1), bound = TRUE)
+i$contains(Set$new(10), bound = TRUE)
 ```
 
 ## Algebra of Sets
@@ -153,7 +153,7 @@ PosReals$new() + NegReals$new()
 The relative complement of two sets, $A-B$, is defined as the set of elements in $A$ but not in $B$.
 
 ```{r}
-Set$new(1:10) - Set$new(4:10)
+Set$new(elements = 1:10) - Set$new(elements = 4:10)
 Set$new(1,2,3,4) - Set$new(2)
 
 Reals$new() - PosReals$new()
@@ -222,6 +222,6 @@ p$contains(Tuple$new(2, 4))
 
 ## Going Forward
 
-`set6` is still in its early stages and the API is considered to be maturing, this means that whilst no big changes are expected to the design, minor ones can be expected. `set6` will be considered to be in its version 1 once all methods and fields are finalised (some are missing from wrappers), and when the code has been refactored to be more efficient. See [the website](https://raphaels1.github.io/set6/) for more tutorials and
-follow/star on [GitHub](https://github.com/RaphaelS1/set6) for updates.
+`set6` is still in its early stages and the API is considered to be maturing, this means that whilst no big changes are expected to the design, minor ones can be expected. `set6` will be considered to be in its version 1 once all methods and fields are finalised (some are missing from wrappers), and when the code has been refactored to be more efficient. See [the website](https://xoopR.github.io/set6/) for more tutorials and
+follow/star on [GitHub](https://github.com/xoopR/set6) for updates.
  
