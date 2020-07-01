@@ -1,6 +1,6 @@
 Package: set6
 Title: R6 Mathematical Sets Interface
-Version: 0.1.4
+Version: 0.1.5
 Authors@R: 
       c(person(given = "Raphael",
              family = "Sonabend",
@@ -27,19 +27,19 @@ Collate: 'Properties.R' 'RcppExports.R' 'Set.R' 'SetWrapper.R'
         'SetWrapper_PowersetSet.R' 'SetWrapper_ProductSet.R'
         'SetWrapper_UnionSet.R' 'Set_ConditionalSet.R' 'Set_FuzzySet.R'
         'Set_FuzzySet_FuzzyTuple.R' 'Set_Interval.R' 'setSymbol.R'
-        'Set_Interval_SpecialSet.R' 'Set_Tuple.R' 'Set_UniversalSet.R'
-        'asFuzzySet.R' 'asInterval.R' 'asSet.R' 'helpers.R'
-        'assertions.R' 'atomic_coercions.R' 'listSpecialSets.R'
-        'operation_cleaner.R' 'operation_powerset.R'
-        'operation_setcomplement.R' 'operation_setintersect.R'
-        'operation_setpower.R' 'operation_setproduct.R'
-        'operation_setsymdiff.R' 'operation_setunion.R' 'operators.R'
-        'set6-deprecated.R' 'set6-package.R' 'set6.news.R'
-        'useUnicode.R' 'zzz.R'
+        'Set_Interval_SpecialSet.R' 'Set_LogicalSet.R' 'Set_Tuple.R'
+        'Set_UniversalSet.R' 'asFuzzySet.R' 'asInterval.R' 'asSet.R'
+        'helpers.R' 'assertions.R' 'atomic_coercions.R'
+        'listSpecialSets.R' 'operation_cleaner.R'
+        'operation_powerset.R' 'operation_setcomplement.R'
+        'operation_setintersect.R' 'operation_setpower.R'
+        'operation_setproduct.R' 'operation_setsymdiff.R'
+        'operation_setunion.R' 'operators.R' 'set6-deprecated.R'
+        'set6-package.R' 'set6.news.R' 'useUnicode.R' 'zzz.R'
 NeedsCompilation: yes
-Packaged: 2020-05-18 17:20:39 UTC; raphael
+Packaged: 2020-07-01 09:19:45 UTC; raphael
 Author: Raphael Sonabend [aut, cre] (<https://orcid.org/0000-0001-9225-4654>),
   Franz Kiraly [aut]
 Maintainer: Raphael Sonabend <raphael.sonabend.15@ucl.ac.uk>
 Repository: CRAN
-Date/Publication: 2020-05-18 18:30:02 UTC
+Date/Publication: 2020-07-01 11:00:03 UTC
