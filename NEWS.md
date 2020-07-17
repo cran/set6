@@ -1,3 +1,8 @@
+# set6 0.1.6
+
+* Bugfix in set operation cleaner
+* Bugfix causing `Interval$contains` to return `TRUE` for tuples
+
 # set6 0.1.5
 
 * Added `LogicalSet`, the set of $\{TRUE, FALSE\}$
