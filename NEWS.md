@@ -1,7 +1,13 @@
+# set6 0.1.7
+
+* Critical patch - Added variable `ExponentSet` to solve
+
 # set6 0.1.6
 
 * Bugfix in set operation cleaner
 * Bugfix causing `Interval$contains` to return `TRUE` for tuples
+* Bugfix in union sets incorrectly unwrapping products
+* Added variable length `ExponentSet`s
 
 # set6 0.1.5
 
