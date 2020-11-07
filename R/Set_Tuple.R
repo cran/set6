@@ -72,16 +72,8 @@ Tuple <- R6Class("Tuple",
           return(FALSE)
         }
 
-        for (i in seq_along(el$length)) {
-          elel <- ifnerror(el$elements[[i]]$strprint(), error = el$elements[[i]])
-          selel <- ifnerror(self$elements[[i]]$strprint(), error = self$elements[[i]])
 
-          if (elel != selel) {
-            return(FALSE)
-          }
-        }
-
-        return(TRUE)
+        ifelse(all.equal(el$multiplicity(), self$multiplicity()) == TRUE, TRUE, FALSE)
       })
 
       returner(ret, all)

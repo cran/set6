@@ -1,13 +1,10 @@
-library(testthat)
-
-context("setintersect")
-
 test_that("SetXSet", {
   expect_true(setintersect(Set$new(1, 2, 3), Set$new(3:5)) == (Set$new(3)))
   expect_equal(Set$new(1) & Set$new(), Set$new())
   expect_equal(Set$new(1, 2, 3) & Set$new(1), Set$new(1))
   expect_equal(Set$new(1) & Set$new(1, 2, 3), Set$new(1))
   expect_equal(Tuple$new(1, "a", 2L) & Set$new(elements = letters), Set$new("a"))
+  expect_equal(Multiset$new(1, "a", 2L) & Set$new(elements = letters), Set$new("a"))
   expect_equal(Set$new(1) & Set$new(1, 2), Set$new(1))
   expect_equal(Set$new() & Set$new(), Set$new())
 })
@@ -16,7 +13,7 @@ test_that("conditionalset", {
   useUnicode(FALSE)
   expect_equal(
     (ConditionalSet$new(function(x) x == 1) & ConditionalSet$new(function(y) y > 1))$strprint(),
-    "{x == 1 & y > 1 : x in V, y in V}"
+    "{x in V, y in V : x == 1 & y > 1}"
   )
   expect_equal(
     ConditionalSet$new(function(x) x == 1) & ConditionalSet$new(function(y) y == 1),

@@ -68,10 +68,8 @@ FuzzyTuple <- R6Class("FuzzyTuple",
           return(FALSE)
         }
 
-        elel <- unlist(lapply(el$elements, function(x) ifelse(testSet(x), x$strprint(), x)))
-        selel <- unlist(lapply(self$elements, function(x) ifelse(testSet(x), x$strprint(), x)))
-
-        return(suppressWarnings(all(elel == selel) & all(el$membership() == self$membership())))
+        ifelse(all(all.equal(el$multiplicity(), self$multiplicity()) == TRUE), TRUE, FALSE) &&
+          ifelse(all(all.equal(el$membership(), self$membership()) == TRUE), TRUE, FALSE)
       })
 
       returner(ret, all)
@@ -114,7 +112,7 @@ FuzzyTuple <- R6Class("FuzzyTuple",
         if (el$length > self$length) {
           return(FALSE)
         } else if (el$length == self$length) {
-          if (!proper & el$equals(self)) {
+          if (!proper && el$equals(self)) {
             return(TRUE)
           } else {
             return(FALSE)
@@ -144,11 +142,16 @@ FuzzyTuple <- R6Class("FuzzyTuple",
     #' @param create logical, if `FALSE` (default) returns the elements in the alpha cut, otherwise returns a crisp set of the elements
     #' @return Elements in [FuzzyTuple] or a [Set] of the elements.
     alphaCut = function(alpha, strong = FALSE, create = FALSE) {
+      els <- self$elements
+      mem <- self$membership()
+
       if (strong) {
-        els <- self$elements[self$membership() > alpha]
+        mtc <- match(names(mem[mem > alpha]), private$.str_elements)
       } else {
-        els <- self$elements[self$membership() >= alpha]
+        mtc <- match(names(mem[mem >= alpha]), private$.str_elements)
       }
+
+      els <- els[mtc][!is.na(mtc)]
 
       if (create) {
         if (length(els) == 0) {

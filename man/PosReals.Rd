@@ -14,6 +14,7 @@ Other special sets:
 \code{\link{Complex}},
 \code{\link{ExtendedReals}},
 \code{\link{Integers}},
+\code{\link{Logicals}},
 \code{\link{Naturals}},
 \code{\link{NegIntegers}},
 \code{\link{NegRationals}},
@@ -22,7 +23,8 @@ Other special sets:
 \code{\link{PosNaturals}},
 \code{\link{PosRationals}},
 \code{\link{Rationals}},
-\code{\link{Reals}}
+\code{\link{Reals}},
+\code{\link{Universal}}
 }
 \concept{special sets}
 \section{Super classes}{
@@ -39,6 +41,7 @@ Other special sets:
 \out{<details ><summary>Inherited methods</summary>}
 \itemize{
 \item \out{<span class="pkg-link" data-pkg="set6" data-topic="Set" data-id="add">}\href{../../set6/html/Set.html#method-add}{\code{set6::Set$add()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="set6" data-topic="Set" data-id="multiplicity">}\href{../../set6/html/Set.html#method-multiplicity}{\code{set6::Set$multiplicity()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="set6" data-topic="Set" data-id="print">}\href{../../set6/html/Set.html#method-print}{\code{set6::Set$print()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="set6" data-topic="Set" data-id="remove">}\href{../../set6/html/Set.html#method-remove}{\code{set6::Set$remove()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="set6" data-topic="Set" data-id="summary">}\href{../../set6/html/Set.html#method-summary}{\code{set6::Set$summary()}}\out{</span>}

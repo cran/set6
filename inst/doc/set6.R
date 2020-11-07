@@ -6,6 +6,7 @@ knitr::opts_chunk$set(collapse = T, comment = "#>")
 options(tibble.print_min = 4L, tibble.print_max = 4L)
 library("set6")
 set.seed(42)
+useUnicode(TRUE)
 
 ## -----------------------------------------------------------------------------
 empty = Set$new()

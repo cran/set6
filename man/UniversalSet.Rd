@@ -68,17 +68,6 @@ s2 = s * s
 s2$contains(Tuple$new(2,1))
 c(Tuple$new(2,1), Tuple$new(1,7), 2) \%inset\% s2
 }
-\seealso{
-Other sets: 
-\code{\link{ConditionalSet}},
-\code{\link{FuzzySet}},
-\code{\link{FuzzyTuple}},
-\code{\link{Interval}},
-\code{\link{LogicalSet}},
-\code{\link{Set}},
-\code{\link{Tuple}}
-}
-\concept{sets}
 \section{Super class}{
 \code{\link[set6:Set]{set6::Set}} -> \code{UniversalSet}
 }
@@ -97,6 +86,7 @@ Other sets:
 \out{<details open ><summary>Inherited methods</summary>}
 \itemize{
 \item \out{<span class="pkg-link" data-pkg="set6" data-topic="Set" data-id="add">}\href{../../set6/html/Set.html#method-add}{\code{set6::Set$add()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="set6" data-topic="Set" data-id="multiplicity">}\href{../../set6/html/Set.html#method-multiplicity}{\code{set6::Set$multiplicity()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="set6" data-topic="Set" data-id="print">}\href{../../set6/html/Set.html#method-print}{\code{set6::Set$print()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="set6" data-topic="Set" data-id="remove">}\href{../../set6/html/Set.html#method-remove}{\code{set6::Set$remove()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="set6" data-topic="Set" data-id="summary">}\href{../../set6/html/Set.html#method-summary}{\code{set6::Set$summary()}}\out{</span>}
@@ -138,10 +128,6 @@ Tests if two sets are equal.
 }
 \if{html}{\out{</div>}}
 }
-\subsection{Details}{
-Only the \code{UniversalSet} is equal to itself.
-}
-
 \subsection{Returns}{
 If \code{all} is \code{TRUE} then returns \code{TRUE} if all \code{x} are equal to the Set, otherwise
 \code{FALSE}. If \code{all} is \code{FALSE} then returns a vector of logicals corresponding to each individual
@@ -298,7 +284,7 @@ c(Tuple$new(2,1), Tuple$new(1,7), 2) \%inset\% s2
 \subsection{Method \code{strprint()}}{
 Creates a printable representation of the object.
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{UniversalSet$strprint(n = 2)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{UniversalSet$strprint(n = NULL)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{

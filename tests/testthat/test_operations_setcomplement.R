@@ -1,7 +1,3 @@
-library(testthat)
-
-context("setcomplement")
-
 test_that("subsets", {
   expect_equal(Set$new(elements = 1:3) - Set$new(elements = 1:4), Set$new())
   expect_equal(Set$new(1) - Reals$new(), Set$new())
@@ -13,7 +9,7 @@ test_that("special sets", {
   expect_equal(Reals$new() - NegReals$new(), PosReals$new())
   expect_equal(Rationals$new() - PosRationals$new(), NegRationals$new())
   expect_equal(Rationals$new() - NegRationals$new(), PosRationals$new())
-  expect_equal(Rationals$new() - Interval$new(5, 10), Interval$new(-Inf, 5, type = "()") +
+  expect_equal(Reals$new() - Interval$new(5, 10), Interval$new(-Inf, 5, type = "()") +
     Interval$new(10, Inf, type = "()"))
   expect_equal(Integers$new() - PosIntegers$new(), NegIntegers$new())
   expect_equal(Integers$new() - NegIntegers$new(), PosIntegers$new())
@@ -25,6 +21,7 @@ test_that("set", {
   expect_equal(Set$new(elements = 1:5) - Set$new(elements = 3:5), Set$new(elements = 1:2))
   expect_equal(Set$new(elements = 1:5) - Set$new(elements = 6:10), Set$new(elements = 1:5))
   expect_equal(Tuple$new(elements = 1:5) - Set$new(elements = 6:10), Tuple$new(elements = 1:5))
+  expect_equal(Multiset$new(elements = 1:5) - Set$new(elements = 6:10), Multiset$new(elements = 1:5))
   expect_equal(Set$new(elements = 1:5) - Interval$new(4, 15), Set$new(elements = 1:3))
   expect_equal(Tuple$new(elements = 1:5) - Interval$new(4, 15), Tuple$new(elements = 1:3))
   expect_equal(setcomplement(Set$new(1, 2, universe = Set$new(1, 2, 3))), Set$new(3))
@@ -69,6 +66,8 @@ test_that("interval", {
 test_that("fuzzy", {
   expect_equal(FuzzySet$new(1, 0.1, 2, 0.2, 3, 0.3) - FuzzySet$new(3, 0.3, 4, 0.4), FuzzySet$new(1, 0.1, 2, 0.2))
   expect_equal(FuzzyTuple$new(1, 0.1, 2, 0.2, 3, 0.3) - FuzzyTuple$new(3, 0.3, 4, 0.4), FuzzyTuple$new(1, 0.1, 2, 0.2))
+  expect_equal(FuzzyMultiset$new(1, 0.1, 2, 0.2, 3, 0.3) - FuzzyMultiset$new(3, 0.3, 4, 0.4), FuzzyMultiset$new(1, 0.1, 2, 0.2))
+  expect_equal(Multiset$new(2) - FuzzySet$new(1, 0.1), Multiset$new(2))
   expect_equal(Tuple$new(2) - FuzzyTuple$new(2, 0.1), Tuple$new())
   expect_equal(Tuple$new(2) - FuzzySet$new(1, 0.1), Tuple$new(2))
 })
@@ -77,25 +76,15 @@ test_that("conditional", {
   useUnicode(FALSE)
   expect_equal(
     (ConditionalSet$new(function(x) x == 0) - ConditionalSet$new(function(y) y > 0))$strprint(),
-    "{x == 0 & !(y > 0) : x in V, y in V}"
+    "{x in V, y in V : x == 0 & !(y > 0)}"
   )
 
   expect_equal(
     (ConditionalSet$new(function(x) TRUE) - Set$new(1))$strprint(),
-    "{TRUE : x in V} \\ {1}"
+    "{x in V : TRUE} \\ {1}"
   )
   useUnicode(TRUE)
 })
-#
-# test_that("contains",{
-#   x = Interval$new(1,8) - Interval$new(6, 6, type = "()")
-#   expect_false(x$contains(0))
-#   expect_true(x$contains(1))
-#   expect_false(x$contains(6))
-#   expect_false(x$contains(9))
-#   expect_false(x$contains(16))
-#   expect_equal(x$contains(c(0,1,6,9,16)), c(FALSE, TRUE, FALSE, FALSE, FALSE))
-# })
 
 test_that("wrappers", {
   expect_equal((Reals$new() - Integers$new()) - Set$new(1, 2), Reals$new() - Integers$new())

@@ -1,7 +1,6 @@
 #' @name UniversalSet
 #' @title Mathematical Universal Set
 #' @description The `UniversalSet` is defined as the [Set] containing all possible elements.
-#' @family sets
 #'
 #' @details
 #' The Universal set is the default universe to all sets, and is the largest possible set.
@@ -30,6 +29,7 @@ UniversalSet <- R6::R6Class("UniversalSet",
     #' @details The Universal set is the set containing every possible element.
     #' @return A new `UniversalSet` object.
     initialize = function() {
+      warning("Deprecated. In the future please use Universal$new(). This will be removed in v0.4.0.")
       private$.properties <- Properties$new(closure = "open", cardinality = Inf)
       invisible(self)
     },
@@ -37,7 +37,6 @@ UniversalSet <- R6::R6Class("UniversalSet",
     #' @description Tests if two sets are equal.
     #' @param x [Set] or vector of [Set]s.
     #' @param all logical. If `FALSE` tests each `x` separately. Otherwise returns `TRUE` only if all `x` pass test.
-    #' @details Only the `UniversalSet` is equal to itself.
     #' @return If `all` is `TRUE` then returns `TRUE` if all `x` are equal to the Set, otherwise
     #' `FALSE`. If `all` is `FALSE` then returns a vector of logicals corresponding to each individual
     #' element of `x`.
@@ -153,8 +152,8 @@ UniversalSet <- R6::R6Class("UniversalSet",
     #' @description Creates a printable representation of the object.
     #' @param n numeric. Number of elements to display on either side of ellipsis when printing.
     #' @return A character string representing the object.
-    strprint = function(n = 2) {
-      return("V")
+    strprint = function(n = NULL) {
+      setSymbol("universal")
     }
   ),
 

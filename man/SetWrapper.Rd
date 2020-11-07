@@ -6,6 +6,14 @@
 \description{
 This class should not be constructed directly. Parent class to \code{SetWrapper}s.
 }
+\details{
+Wrappers in set6 are utilised to facilitate lazy evaluation and symbolic representation.
+Each operation has an associated wrapper that will be returned if \code{simplify = FALSE} or if the
+result would be too complex to return as a simple \link{Set}. Wrappers have an identical interface
+to \link{Set}. Their primary advantage lies in a neat representation of any set composition (the
+result of an operation) and the ability to query the set contents without ever directly
+evaluating the set elements.
+}
 \section{Super class}{
 \code{\link[set6:Set]{set6::Set}} -> \code{SetWrapper}
 }
@@ -30,6 +38,7 @@ This class should not be constructed directly. Parent class to \code{SetWrapper}
 \itemize{
 \item \out{<span class="pkg-link" data-pkg="set6" data-topic="Set" data-id="add">}\href{../../set6/html/Set.html#method-add}{\code{set6::Set$add()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="set6" data-topic="Set" data-id="contains">}\href{../../set6/html/Set.html#method-contains}{\code{set6::Set$contains()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="set6" data-topic="Set" data-id="multiplicity">}\href{../../set6/html/Set.html#method-multiplicity}{\code{set6::Set$multiplicity()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="set6" data-topic="Set" data-id="print">}\href{../../set6/html/Set.html#method-print}{\code{set6::Set$print()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="set6" data-topic="Set" data-id="remove">}\href{../../set6/html/Set.html#method-remove}{\code{set6::Set$remove()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="set6" data-topic="Set" data-id="strprint">}\href{../../set6/html/Set.html#method-strprint}{\code{set6::Set$strprint()}}\out{</span>}

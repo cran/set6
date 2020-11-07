@@ -1,6 +1,6 @@
 Package: set6
 Title: R6 Mathematical Sets Interface
-Version: 0.1.8
+Version: 0.2.0
 Authors@R: 
       c(person(given = "Raphael",
              family = "Sonabend",
@@ -21,13 +21,15 @@ URL: https://xoopR.github.io/set6/, https://github.com/xoopR/set6
 BugReports: https://github.com/xoopR/set6/issues
 VignetteBuilder: knitr
 Encoding: UTF-8
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 Collate: 'Properties.R' 'RcppExports.R' 'Set.R' 'SetWrapper.R'
         'SetWrapper_ComplementSet.R' 'SetWrapper_ExponentSet.R'
         'SetWrapper_PowersetSet.R' 'SetWrapper_ProductSet.R'
-        'SetWrapper_UnionSet.R' 'Set_ConditionalSet.R' 'Set_FuzzySet.R'
+        'SetWrapper_UnionSet.R' 'Set_Complex.R' 'Set_ConditionalSet.R'
+        'Set_FuzzySet.R' 'Set_FuzzySet_FuzzyMultiset.R'
         'Set_FuzzySet_FuzzyTuple.R' 'Set_Interval.R' 'setSymbol.R'
-        'Set_Interval_SpecialSet.R' 'Set_LogicalSet.R' 'Set_Tuple.R'
+        'Set_Interval_SpecialSet.R' 'Set_LogicalSet.R' 'Set_Logicals.R'
+        'Set_Multiset.R' 'Set_Tuple.R' 'Set_Universal.R'
         'Set_UniversalSet.R' 'asFuzzySet.R' 'asInterval.R' 'asSet.R'
         'helpers.R' 'assertions.R' 'atomic_coercions.R'
         'listSpecialSets.R' 'operation_cleaner.R'
@@ -37,9 +39,9 @@ Collate: 'Properties.R' 'RcppExports.R' 'Set.R' 'SetWrapper.R'
         'operation_setunion.R' 'operators.R' 'set6-deprecated.R'
         'set6-package.R' 'set6.news.R' 'useUnicode.R' 'zzz.R'
 NeedsCompilation: yes
-Packaged: 2020-07-26 11:00:36 UTC; raphael
+Packaged: 2020-11-05 21:51:27 UTC; raphael
 Author: Raphael Sonabend [aut, cre] (<https://orcid.org/0000-0001-9225-4654>),
   Franz Kiraly [aut]
 Maintainer: Raphael Sonabend <raphael.sonabend.15@ucl.ac.uk>
 Repository: CRAN
-Date/Publication: 2020-07-27 05:10:02 UTC
+Date/Publication: 2020-11-07 01:00:02 UTC

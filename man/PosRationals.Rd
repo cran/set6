@@ -19,6 +19,7 @@ Other special sets:
 \code{\link{Complex}},
 \code{\link{ExtendedReals}},
 \code{\link{Integers}},
+\code{\link{Logicals}},
 \code{\link{Naturals}},
 \code{\link{NegIntegers}},
 \code{\link{NegRationals}},
@@ -27,7 +28,8 @@ Other special sets:
 \code{\link{PosNaturals}},
 \code{\link{PosReals}},
 \code{\link{Rationals}},
-\code{\link{Reals}}
+\code{\link{Reals}},
+\code{\link{Universal}}
 }
 \concept{special sets}
 \section{Super classes}{
@@ -44,14 +46,15 @@ Other special sets:
 \out{<details ><summary>Inherited methods</summary>}
 \itemize{
 \item \out{<span class="pkg-link" data-pkg="set6" data-topic="Set" data-id="add">}\href{../../set6/html/Set.html#method-add}{\code{set6::Set$add()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="set6" data-topic="Set" data-id="multiplicity">}\href{../../set6/html/Set.html#method-multiplicity}{\code{set6::Set$multiplicity()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="set6" data-topic="Set" data-id="print">}\href{../../set6/html/Set.html#method-print}{\code{set6::Set$print()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="set6" data-topic="Set" data-id="remove">}\href{../../set6/html/Set.html#method-remove}{\code{set6::Set$remove()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="set6" data-topic="Set" data-id="summary">}\href{../../set6/html/Set.html#method-summary}{\code{set6::Set$summary()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="set6" data-topic="Interval" data-id="contains">}\href{../../set6/html/Interval.html#method-contains}{\code{set6::Interval$contains()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="set6" data-topic="Interval" data-id="equals">}\href{../../set6/html/Interval.html#method-equals}{\code{set6::Interval$equals()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="set6" data-topic="Interval" data-id="isSubinterval">}\href{../../set6/html/Interval.html#method-isSubinterval}{\code{set6::Interval$isSubinterval()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="set6" data-topic="Interval" data-id="isSubset">}\href{../../set6/html/Interval.html#method-isSubset}{\code{set6::Interval$isSubset()}}\out{</span>}
 \item \out{<span class="pkg-link" data-pkg="set6" data-topic="SpecialSet" data-id="strprint">}\href{../../set6/html/SpecialSet.html#method-strprint}{\code{set6::SpecialSet$strprint()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="set6" data-topic="Rationals" data-id="contains">}\href{../../set6/html/Rationals.html#method-contains}{\code{set6::Rationals$contains()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="set6" data-topic="Rationals" data-id="equals">}\href{../../set6/html/Rationals.html#method-equals}{\code{set6::Rationals$equals()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="set6" data-topic="Rationals" data-id="isSubset">}\href{../../set6/html/Rationals.html#method-isSubset}{\code{set6::Rationals$isSubset()}}\out{</span>}
 }
 \out{</details>}
 }

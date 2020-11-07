@@ -54,10 +54,8 @@
 #' @export
 setcomplement <- function(x, y, simplify = TRUE) {
   if (missing(y)) {
-    if (getR6Class(x) == "FuzzySet") {
-      return(FuzzySet$new(elements = x$elements, membership = 1 - x$membership()))
-    } else if (getR6Class(x) == "FuzzyTuple") {
-      return(FuzzyTuple$new(elements = x$elements, membership = 1 - x$membership()))
+    if (testFuzzy(x)) {
+      return(getR6Class(x, FALSE)$new(elements = x$elements, membership = 1 - unlist(x$membership())))
     } else if (is.null(x$universe)) {
       stop("Set y is missing and x does not have a universe for absolute complement.")
     } else {
@@ -71,7 +69,7 @@ setcomplement <- function(x, y, simplify = TRUE) {
 
   if ((testConditionalSet(x) & !testConditionalSet(y)) |
     (testConditionalSet(y) & !testConditionalSet(x)) |
-    !simplify | getR6Class(x) == "UniversalSet") {
+    !simplify | getR6Class(x) == "Universal") {
     return(ComplementSet$new(x, y))
   } else if (testConditionalSet(x) | inherits(x, "ComplementSet")) {
     UseMethod("setcomplement")
@@ -84,19 +82,27 @@ setcomplement <- function(x, y, simplify = TRUE) {
   if (testCountablyFinite(x) & testCountablyFinite(y)) {
     if (testTuple(x)) {
       return(Tuple$new(elements = setdiff(x$elements, y$elements)))
+    } else if (testMultiset(x)) {
+      return(Multiset$new(elements = setdiff(x$elements, y$elements)))
     } else {
       return(Set$new(elements = setdiff(x$elements, y$elements)))
     }
   }
 
-  if (getR6Class(y) == "UniversalSet") {
+  if (getR6Class(y) == "Universal") {
     return(Set$new())
   }
 
   if (testCrisp(x) & testFuzzyTuple(y)) {
     y <- as.Tuple(y)
+  } else if (testCrisp(x) & testFuzzyMultiset(y)) {
+    y <- as.Multiset(y)
   } else if (testCrisp(x) & testFuzzySet(y)) {
     y <- as.Set(y)
+  }
+
+  if (inherits(x, "Rationals")) {
+    UseMethod("setcomplement")
   }
 
   if (x == y) {
@@ -125,18 +131,14 @@ setcomplement <- function(x, y, simplify = TRUE) {
 #' @export
 setcomplement.Set <- function(x, y, simplify = TRUE) {
   # difference of two sets
-  if (getR6Class(y) %in% c("Set", "Tuple", "FuzzySet", "FuzzyTuple")) {
-    if (testTuple(x)) {
-      return(Tuple$new(elements = x$elements[!(x$elements %in% y$elements)]))
-    } else {
-      return(Set$new(elements = x$elements[!(x$elements %in% y$elements)]))
+  if (getR6Class(y) %in% c("Set", "Tuple", "FuzzySet", "FuzzyTuple", "Multiset", "FuzzyMultiset")) {
+    if (getR6Class(x) %in% c("Set", "Tuple", "Multiset")) {
+      return(getR6Class(x, FALSE)$new(elements = x$elements[!(x$elements %in% y$elements)]))
     }
-    # difference of set and interval
+    # difference of set and interval - signif performance difference when separated from above
   } else if (testInterval(y)) {
-    if (testTuple(x)) {
-      return(Tuple$new(elements = x$elements[!y$contains(x$elements)]))
-    } else {
-      return(Set$new(elements = x$elements[!y$contains(x$elements)]))
+    if (getR6Class(x) %in% c("Set", "Tuple", "Multiset")) {
+      return(getR6Class(x, FALSE)$new(elements = x$elements[!y$contains(x$elements)]))
     }
   }
 }
@@ -222,16 +224,9 @@ setcomplement.Interval <- function(x, y, simplify = TRUE) {
 #' @rdname setcomplement
 #' @export
 setcomplement.FuzzySet <- function(x, y, simplify = TRUE) {
-  y <- as.FuzzySet(y)
+  y <- do.call(paste0("as.", getR6Class(x)), list(y))
   ind <- !(x$elements %in% y$elements)
-  return(FuzzySet$new(elements = x$elements[ind], membership = x$membership()[ind]))
-}
-#' @rdname setcomplement
-#' @export
-setcomplement.FuzzyTuple <- function(x, y, simplify = TRUE) {
-  y <- as.FuzzyTuple(y)
-  ind <- !(x$elements %in% y$elements)
-  return(FuzzyTuple$new(elements = x$elements[ind], membership = x$membership()[ind]))
+  return(getR6Class(x, FALSE)$new(elements = x$elements[ind], membership = x$membership()[ind]))
 }
 #' @rdname setcomplement
 #' @export
@@ -273,7 +268,7 @@ setcomplement.Rationals <- function(x, y, simplify = TRUE) {
   } else if (getR6Class(y) == "NegRationals") {
     return(PosRationals$new())
   } else {
-    return(setcomplement.Interval(x, y))
+    return(ComplementSet$new(x, y))
   }
 }
 #' @rdname setcomplement

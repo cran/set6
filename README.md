@@ -205,8 +205,8 @@ These mainly include
     classes inheriting from `SetWrapper` to simpler sets. This allows
     users to perform operations with `simplify = FALSE` and then to
     change their mind.
-  - There are some inefficient loops implemented that will need
-    refactoring for more efficient code.
+  - There are known bottlenecks that need to be fixed to massively
+    improve speed and efficiency.
   - Adding more tutorials to make the interface easier for beginners,
     especially people new to R6
 
@@ -222,11 +222,11 @@ of sets and intervals, but this is very low priority.
     does not allow for clear inspection of set/interval elements, and
     there is no support for multi-dimensional sets.
 
-  - [BaseSet](https://github.com/llrs/BaseSet) - The **BaseSet** package
-    focuses on storing and analysing sets in a ‘tidy’ way, with more
-    options for data storage in long and wide formats. The primary usage
-    is neat and efficient inspection of finite sets, there is no support
-    for infinite sets or symbolic representation.
+  - [BaseSet](https://github.com/ropensci/BaseSet) - The **BaseSet**
+    package focuses on storing and analysing sets in a ‘tidy’ way, with
+    more options for data storage in long and wide formats. The primary
+    usage is neat and efficient inspection of finite sets, there is no
+    support for infinite sets or symbolic representation.
 
 ## Contributing
 
