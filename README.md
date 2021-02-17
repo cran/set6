@@ -3,23 +3,27 @@ set6
 
 <img src="man/figures/logo.png" align="right" alt="" width="120" />
 
-![R CMD Check via
-{tic}](https://github.com/xoopR/set6/workflows/R%20CMD%20Check%20via%20%7Btic%7D/badge.svg?branch=master)
+[![R CMD Check via
+{tic}](https://github.com/xoopR/set6/workflows/R%20CMD%20Check%20via%20%7Btic%7D/badge.svg?branch=master)](https://github.com/xoopR/set6/actions)
 [![codecov](https://codecov.io/gh/xoopR/set6/branch/master/graph/badge.svg)](https://codecov.io/gh/xoopR/set6)
+[![CodeFactor](https://www.codefactor.io/repository/github/xoopr/set6/badge)](https://www.codefactor.io/repository/github/xoopr/set6)
+[![dependencies](https://tinyverse.netlify.com/badge/set6)](https://CRAN.R-project.org/package=set6)
+
 [![Repo
 Status](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Lifecycle
 Badge](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://img.shields.io/badge/lifecycle-stable-brightgreen)
+
 [![CRAN Status
 Badge](https://www.r-pkg.org/badges/version-ago/set6)](https://cran.r-project.org/package=set6)
 [![CRAN
 Checks](https://cranchecks.info/badges/summary/set6)](https://cran.r-project.org/web/checks/check_results_set6.html)
-[![DOI](https://zenodo.org/badge/197164551.svg)](https://zenodo.org/badge/latestdoi/197164551)
-[![License:
-MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![CRAN
 Downloads](https://cranlogs.r-pkg.org/badges/grand-total/set6)](https://cran.r-project.org/package=set6)
-[![dependencies](https://tinyverse.netlify.com/badge/set6)](https://CRAN.R-project.org/package=set6)
+
+[![DOI](https://joss.theoj.org/papers/10.21105/joss.02598/status.svg)](https://doi.org/10.21105/joss.02598)
+[![License:
+MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Gitter
 chat](https://badges.gitter.im/xoopR/set6.png)](https://gitter.im/xoopR/set6)
 
@@ -98,7 +102,7 @@ PosRationals$new()
 ``` r
 # Union
 Set$new(1, 4, "a", "b") + Set$new(5)
-#> {1, 4,...,b, 5}
+#> {1, 4,...,a, b}
 Interval$new(1, 5) + FuzzyTuple$new(1, 0.6)
 #> [1,5]
 
@@ -236,3 +240,14 @@ request. Otherwise bug reports are very appreciated if you stumble
 across any broken code, these can be posted to the [issue
 tracker](https://github.com/xoopR/set6/issues). For updates on `set6`
 follow/star this repo.
+
+## Citing set6
+
+If you use set6, please cite our [JOSS
+article](https://doi.org/10.21105/joss.02598):
+
+@Article{set6, title = {set6: R6 Mathematical Sets Interface}, author =
+{Raphael Sonabend and Franz J. Kiraly}, journal = {Journal of Open
+Source Software}, year = {2020}, month = {nov}, doi =
+{10.21105/joss.02598}, url =
+{<https://joss.theoj.org/papers/10.21105/joss.02598>}, }

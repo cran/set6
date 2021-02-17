@@ -61,6 +61,16 @@ test_that("interval", {
     "[1,10] \\ {2,...,4}"
   )
   expect_equal(Interval$new(1, 5) - Set$new(3, 5), Interval$new(1, 3, type = "[)") + Interval$new(3, 5, type = "()"))
+
+  a = Interval$new(0, 2, type = "[]")
+  expect_equal(a - Interval$new(0, 1, type = "[]"), Interval$new(1, 2, type = "(]"))
+  expect_equal(a - Interval$new(0, 1, type = "[)"), Interval$new(1, 2, type = "[]"))
+  expect_equal(a - Interval$new(0, 1, type = "()"), Set$new(0) + Interval$new(1, 2, type = "[]"))
+  expect_equal(a - Interval$new(0, 1, type = "(]"), Set$new(0) + Interval$new(1, 2, type = "(]"))
+
+  a = Interval$new(1, 3, type = "[]")
+  expect_equal(a - Interval$new(0, 2, type = "()"), Interval$new(2, 3, type = "[]"))
+  expect_equal(a - Interval$new(0, 2, type = "[]"), Interval$new(2, 3, type = "(]"))
 })
 
 test_that("fuzzy", {
@@ -81,7 +91,7 @@ test_that("conditional", {
 
   expect_equal(
     (ConditionalSet$new(function(x) TRUE) - Set$new(1))$strprint(),
-    "{x in V : TRUE} \\ {1}"
+    "{x in V} \\ {1}"
   )
   useUnicode(TRUE)
 })

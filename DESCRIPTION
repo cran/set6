@@ -1,6 +1,6 @@
 Package: set6
 Title: R6 Mathematical Sets Interface
-Version: 0.2.0
+Version: 0.2.1
 Authors@R: 
       c(person(given = "Raphael",
              family = "Sonabend",
@@ -22,6 +22,7 @@ BugReports: https://github.com/xoopR/set6/issues
 VignetteBuilder: knitr
 Encoding: UTF-8
 RoxygenNote: 7.1.1
+SystemRequirements: C++11
 Collate: 'Properties.R' 'RcppExports.R' 'Set.R' 'SetWrapper.R'
         'SetWrapper_ComplementSet.R' 'SetWrapper_ExponentSet.R'
         'SetWrapper_PowersetSet.R' 'SetWrapper_ProductSet.R'
@@ -39,9 +40,9 @@ Collate: 'Properties.R' 'RcppExports.R' 'Set.R' 'SetWrapper.R'
         'operation_setunion.R' 'operators.R' 'set6-deprecated.R'
         'set6-package.R' 'set6.news.R' 'useUnicode.R' 'zzz.R'
 NeedsCompilation: yes
-Packaged: 2020-11-05 21:51:27 UTC; raphael
+Packaged: 2021-02-17 07:54:51 UTC; raphael
 Author: Raphael Sonabend [aut, cre] (<https://orcid.org/0000-0001-9225-4654>),
   Franz Kiraly [aut]
 Maintainer: Raphael Sonabend <raphael.sonabend.15@ucl.ac.uk>
 Repository: CRAN
-Date/Publication: 2020-11-07 01:00:02 UTC
+Date/Publication: 2021-02-17 11:50:02 UTC
