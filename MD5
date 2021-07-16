@@ -1,7 +1,7 @@
-aca6a2cc0b8448ab76d654f79caed0af *DESCRIPTION
+f26e72662833d844cc1e5479d1f40291 *DESCRIPTION
 cf2ac1b6dff1ae6894fb2f357df37cbf *LICENSE
 332dc3a95d363c94906483820a4581f0 *NAMESPACE
-30dea0482f81bb9bbb0e9c943d0fc280 *NEWS.md
+eb19cac773f37e9ffc22beac29075b9d *NEWS.md
 04fb18da783a49eaac1c84c34792351c *R/Properties.R
 1de902fcca86e6fa0220b7eac9749b95 *R/RcppExports.R
 21df7fbe800552794003d9b6402122b9 *R/Set.R
@@ -19,7 +19,7 @@ a0ea3d88d09b77923e6734222c4acf25 *R/Set_FuzzySet.R
 3a5dbbc443b48a8699526a983ac9ddbd *R/Set_Interval.R
 439e0a9582a6e6785d415c0b62386d4e *R/Set_Interval_SpecialSet.R
 108bea4ae6f511431aad28e9c42b3842 *R/Set_LogicalSet.R
-8664eb51ea5998f680eca9302931a63b *R/Set_Logicals.R
+7b340ad2dfb7c792b63b1cab674e4a44 *R/Set_Logicals.R
 c4a0fcfc2cd96e2c522e5edb094fbe0e *R/Set_Multiset.R
 a9058650c616feae935815d20008fa6a *R/Set_Tuple.R
 4a6ecb89f92c00beef380c3b3c41f24c *R/Set_Universal.R
@@ -47,10 +47,10 @@ a937848c28d2c54bd3f8ab7eaf16aa7d *R/set6-package.R
 2e3b40c5b1636830ac790e92a5058e7f *R/useUnicode.R
 0944c09d30aefaa6fd2a57828d19e038 *R/zzz.R
 77ffcd88f446e61d9acc2db4b5202b05 *README.md
-dad5ce017efb2084e0ba78cbebf1fd8c *build/vignette.rds
+25827aba8884fcb9410dd6470bd64bb1 *build/vignette.rds
 4ef8889ce61a3447165eba39582bb0bb *inst/CITATION
 9f73b8121b09d026cf3dfdce510b22c9 *inst/doc/set6.R
-c7d39d79416d21675dc0dc8a1d6747d7 *inst/doc/set6.html
+ba5e7d4f9352543f911a3bc8bee6250e *inst/doc/set6.html
 02c3cc7eb4ec0a419274df1976911581 *inst/doc/set6.rmd
 4b8eeb76aa4c2acc6bd57108bcdf95cf *man/ComplementSet.Rd
 68f4ef9f4971366826be1c8b2699890e *man/Complex.Rd
