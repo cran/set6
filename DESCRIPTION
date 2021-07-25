@@ -1,6 +1,6 @@
 Package: set6
 Title: R6 Mathematical Sets Interface
-Version: 0.2.2
+Version: 0.2.3
 Authors@R: 
       c(person(given = "Raphael",
              family = "Sonabend",
@@ -39,9 +39,9 @@ Collate: 'Properties.R' 'RcppExports.R' 'Set.R' 'SetWrapper.R'
         'operation_setunion.R' 'operators.R' 'set6-deprecated.R'
         'set6-package.R' 'set6.news.R' 'useUnicode.R' 'zzz.R'
 NeedsCompilation: yes
-Packaged: 2021-07-15 16:46:32 UTC; raphaelsonabend
+Packaged: 2021-07-25 17:45:15 UTC; raphaelsonabend
 Author: Raphael Sonabend [aut, cre] (<https://orcid.org/0000-0001-9225-4654>),
   Franz Kiraly [aut]
 Maintainer: Raphael Sonabend <raphaelsonabend@gmail.com>
 Repository: CRAN
-Date/Publication: 2021-07-16 12:30:02 UTC
+Date/Publication: 2021-07-25 18:10:02 UTC
