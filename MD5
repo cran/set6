@@ -1,7 +1,7 @@
-16ff2a053d70acffb5a62c85b79cefa3 *DESCRIPTION
+8a7de826a0696ecdf536f2c14b34ff95 *DESCRIPTION
 cf2ac1b6dff1ae6894fb2f357df37cbf *LICENSE
-332dc3a95d363c94906483820a4581f0 *NAMESPACE
-4d892a8622e625e09a72450204dce9f7 *NEWS.md
+3213d3a5875da8c1df522e1ddf55c283 *NAMESPACE
+2936b1d182aa3727578a98d4954fcce8 *NEWS.md
 04fb18da783a49eaac1c84c34792351c *R/Properties.R
 1de902fcca86e6fa0220b7eac9749b95 *R/RcppExports.R
 21df7fbe800552794003d9b6402122b9 *R/Set.R
@@ -34,7 +34,7 @@ e26d0e1652eba2149ff5abc7bf197288 *R/helpers.R
 1ebf3823731265b94a9a9b191687ed21 *R/operation_cleaner.R
 557fea4d9a60e44fef85765b8276d41b *R/operation_powerset.R
 3873757c538e634aeca30f52e0d3d554 *R/operation_setcomplement.R
-ee9f2d96da83d81fd525be1c54c8b902 *R/operation_setintersect.R
+26bda2464669b95cf04aa67ee3023d4c *R/operation_setintersect.R
 56553b3f8ca9118c38b531b2f5224bdf *R/operation_setpower.R
 8b2bd8f06d059f5a0fff81f5df1d285e *R/operation_setproduct.R
 028538eff0719627a2bae41d432af53d *R/operation_setsymdiff.R
@@ -45,12 +45,12 @@ a937848c28d2c54bd3f8ab7eaf16aa7d *R/set6-package.R
 2a92d95810578669148f87c00bc7dd89 *R/set6.news.R
 5eeec72d4abef229759a7c1304b89f29 *R/setSymbol.R
 2e3b40c5b1636830ac790e92a5058e7f *R/useUnicode.R
-0944c09d30aefaa6fd2a57828d19e038 *R/zzz.R
-ae367618f4e525a571df5b4370af1e81 *README.md
+d0d1c74075be6da329a8a47913ee420a *R/zzz.R
+5678bcd59ed36776876d17e8fdf2ed3b *README.md
 25827aba8884fcb9410dd6470bd64bb1 *build/vignette.rds
 4ef8889ce61a3447165eba39582bb0bb *inst/CITATION
 9f73b8121b09d026cf3dfdce510b22c9 *inst/doc/set6.R
-45cd389382ce312a5c13581dae13c586 *inst/doc/set6.html
+2b3c588879c45ebdd70448bdbf4bd148 *inst/doc/set6.html
 02c3cc7eb4ec0a419274df1976911581 *inst/doc/set6.rmd
 4b8eeb76aa4c2acc6bd57108bcdf95cf *man/ComplementSet.Rd
 68f4ef9f4971366826be1c8b2699890e *man/Complex.Rd
@@ -95,7 +95,7 @@ bd9eb353d5df33f751603c1045bee9df *man/figures/logo.png
 2879316b2aed5060abb108bbbcbf9d35 *man/listSpecialSets.Rd
 2af9c6cd43e48a65818a640360c820a5 *man/powerset.Rd
 5cbad1d210f42faac5e55c8618c2ac51 *man/set6-deprecated.Rd
-0e1e262c34a0e52b53226c4818f7d804 *man/set6-package.Rd
+d1d56e1878a5372e5e9121b6d9cfcd39 *man/set6-package.Rd
 fd908eaa5652f3521d42f134af0844b3 *man/set6News.Rd
 b385303f04ae796f18b5d2c7842d6300 *man/setcomplement.Rd
 1f4f09f6759d3092349fc12b693b1f22 *man/setintersect.Rd
@@ -123,7 +123,7 @@ b1edf131b51f42621dbf7ab914dee4b8 *man/testCountablyFinite.Rd
 fe30b6777d7dfe3362e3d9b8290579a6 *man/testSubset.Rd
 e3289dcc8aa76b6ef55fa74f97a5ab9f *man/testTuple.Rd
 e6bccf52d5cc9dd0d8843eb2e42e48ae *man/useUnicode.Rd
-5ff7eae9daf3d71d0bd64c7d648adb89 *src/RcppExports.cpp
+39597431b0ba5f3cee5eb752c1426931 *src/RcppExports.cpp
 f45f68a56931caf2adc37813f9b00a8d *src/contains.cpp
 2e88de98de1bf22923d0ef7410b65f7d *tests/testthat.R
 a41c9c1c921e1e414c644cc65b981be8 *tests/testthat/test_misc_helpers.R
@@ -131,7 +131,7 @@ a41c9c1c921e1e414c644cc65b981be8 *tests/testthat/test_misc_helpers.R
 c32ebf7f5fcc3d59b377dd3da0d12432 *tests/testthat/test_misc_unicode.R
 fb4673cb6c2cdc6d7e7405c48048b6b9 *tests/testthat/test_operation_powerset.R
 0c558ab0b3c61178cd1261da946eb22f *tests/testthat/test_operations_setcomplement.R
-e2505ae4a6053c2c460cc62eb751dffe *tests/testthat/test_operations_setintersect.R
+bfaf72748f0132601a1b28d38981164b *tests/testthat/test_operations_setintersect.R
 8d991cb1ad57856faf03f26371ef96a8 *tests/testthat/test_operations_setpower.R
 2a79c6dd0cab1cace67ffb0d7c4e4ad5 *tests/testthat/test_operations_setproduct.R
 c91d8a074b9219885d04f2a130b82284 *tests/testthat/test_operations_setsymdiff.R
